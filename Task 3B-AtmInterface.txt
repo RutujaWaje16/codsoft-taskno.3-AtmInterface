@@ -1,0 +1,13 @@
+package encapsulation;
+
+public class AccountDriver {
+	public static void main(String []args)
+	{
+	Account a1= new Account("xyz","SBI" ,1234,50000.00,987654321);
+	
+    a1.getAmount(987654321, 1234);
+    a1.deposite(987654321, 1234, 30000);
+    a1.withdraw(987654321, 1234, 10000);
+	
+	}
+}

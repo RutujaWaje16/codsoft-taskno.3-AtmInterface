@@ -1,0 +1,99 @@
+package encapsulation;
+
+public class Account {
+	private String name;
+	private String bankname;
+	private int pin;
+	private double amount ;
+	private long accno;
+	
+	
+	public Account(String name,String bankname,int pin,double amount,long accno)
+	{
+		this.name=name;
+		this.bankname=bankname;
+		this.pin=pin;
+		this.amount=amount;
+		this.accno=accno;
+		
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	public long getAccno()
+	{
+		return accno;
+	}
+	public double getAmount(long accno,int pin)
+	{
+		if(this.accno==accno && this.pin==pin)
+		{
+			return amount;
+		}
+		else 
+		{
+			System.out.println("Incorrect credential");
+			return 0;
+		}
+		
+	}
+	public void withdraw(long accno,int pin,double amount)
+	{
+		if(this.accno==accno && this.pin==pin)
+		{
+			System.out.println("Login success");
+			if((this.amount-amount)>=100)
+			{
+                this.amount -=amount; 
+				System.out.println("Amount Debited");
+				System.out.println("Total Amount is Rs."+this.amount);
+			}
+			else
+			{
+				System.out.println("Insufficient Balance");
+		}
+	}
+		else
+		{
+			System.out.println("Invalid credential");
+		}
+		}
+	public void deposite(long accno,int pin,double amount)
+	{
+	 if (this.accno==accno && this.pin==pin)
+	 {
+		 this.amount +=amount;
+		 System.out.println("Amount updated");
+		 System.out.println("Total Amount is Rs."+this.amount);
+	 }
+	 else
+	 {
+		 System.out.println("Invalid credentials");
+	 }
+	}
+	public void setpin(long accno,int oldpin,int newpin)
+	{
+		if(this.accno==accno)
+		{
+			if(pin==oldpin)
+			{
+				pin=newpin;
+			System.out.println("pin updated");
+			}
+			else
+			{
+				System.out.println("old pin Invalid");
+			}
+		}
+		else 
+		{
+			System.out.println("Invalid Account number");
+			
+			}
+		
+	 }
+	}
+    
+
